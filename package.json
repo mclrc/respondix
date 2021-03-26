@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "name": "respondix",
+  "version": "0.0.1",
+  "description": "Tiny lightweight proxy-based and zero-dependency reactivity library",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixldemon/respondix"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@types/node": "^13.13.15",
+    "typescript": "^3.9.7"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "author": "pixldemon",
+  "license": "MIT"
+}
