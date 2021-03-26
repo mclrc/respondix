@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "respondix",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Tiny lightweight proxy-based and zero-dependency reactivity library",
   "repository": {
     "type": "git",
