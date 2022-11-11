@@ -1,9 +1,18 @@
 {
   "type": "module",
   "name": "respondix",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Tiny lightweight proxy-based and zero-dependency reactivity library",
-  "keywords": ["reactive", "reactivity", "lightweight", "zero-dependency", "vue", "library", "type-hints", "type-script"],
+  "keywords": [
+    "reactive",
+    "reactivity",
+    "lightweight",
+    "zero-dependency",
+    "vue",
+    "library",
+    "type-hints",
+    "type-script"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/pixldemon/respondix"
