@@ -8,11 +8,20 @@ export function defineReactive(target: any, name: string, getter: Function) {
 
 export default function makeReactive<T = any>(state: T): T {
 	// @ts-ignore
-	if (state?.__isProxy) return state // Already rective
-
-	return 	Array.isArray(state) ? makeArrayReactive(state as any) : // Return reactive array
-					state instanceof Object ? makeObjectReactive(state) : // Return reactive object
-					state // State is not an object, must be primitive. Return as-is.
+	if (state?.__isProxy) return state // Already reactive
+	
+	if (Array.isArray(state)) {
+		// @ts-ignore
+		return makeArrayReactive(state)
+	} else if (state instanceof Function) {
+		// Don't proxy functions
+		return state
+	} else if (state instanceof Object) {
+		return makeObjectReactive(state)
+	} else {
+		// Must be primitive. Return as-is
+		return state
+	}
 }
 
 export function unwrap(state: any) {
@@ -69,7 +78,7 @@ function makeObjectReactive(obj: any) {
 	})
 }
 
-function makeArrayReactive(arr: Array<any>) {
+function makeArrayReactive<T = any>(arr: T[]): T[] {
 	// Array only needs one observable since indices are not bound to specific items
 	const observable = new Observable()
 
